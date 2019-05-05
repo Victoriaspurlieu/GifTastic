@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    var displayedButtons = ["Surfing", "Fitness", "Yoga"];
+    var topics = ["Surfing", "Fitness", "Yoga"];
 
     function displayImg(){
 
@@ -41,13 +41,13 @@ $(document).ready(function(){
 
         $("#display-buttons").empty();
 
-        for (var i = 0; i < displayedButtons.length; i++){
+        for (var i = 0; i < topics.length; i++){
 
             var newButton = $("<button>") 
             newButton.attr("class", "btn btn-default");
             newButton.attr("id", "input")  
-            newButton.attr("data-name", displayedButtons[i]); 
-            newButton.text(displayedButtons[i]); 
+            newButton.attr("data-name", topics[i]); 
+            newButton.text(topics[i]); 
             $("#display-buttons").append(newButton); 
         }
     }
@@ -73,7 +73,7 @@ $(document).ready(function(){
 
         var input = $("#user-input").val().trim();
         form.reset();
-        displayedButtons.push(input);
+        topics.push(input);
                 
         renderButtons();
 
